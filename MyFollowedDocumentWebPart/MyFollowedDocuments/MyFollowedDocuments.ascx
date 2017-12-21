@@ -32,7 +32,7 @@
         };
 
         this.displayLoading = function () {
-            this.wrapper.append($('<img src="' + SP.Utilities.Utility.getLayoutsPageUrl("images/gears_anv4.gif") + 'style="width: 15px;"/><span style="margin-left: 10px;vertical-align: 3px;">loading</span>'));
+            this.wrapper.append($('<img src="' + _spPageContextInfo.webAbsoluteUrl + '/_layouts/15/images/gears_anv4.gif" style="width: 15px;"/><span style="margin-left: 10px;vertical-align: 3px;">loading</span>'));
         }
 
         this.CheckMySite = function () {
