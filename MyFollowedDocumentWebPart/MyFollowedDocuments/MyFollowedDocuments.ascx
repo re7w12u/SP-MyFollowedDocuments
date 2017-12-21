@@ -32,7 +32,7 @@
         };
 
         this.displayLoading = function () {
-            this.wrapper.append($('<img src="' + _spPageContextInfo.webAbsoluteUrl + '/_layouts/15/images/gears_anv4.gif" style="width: 15px;"/><span style="margin-left: 10px;vertical-align: 3px;">loading</span>'));
+            this.wrapper.append($('<img src="' + _spPageContextInfo.webServerRelativeUrl + '/_layouts/15/images/gears_anv4.gif" style="width: 15px;"/><span style="margin-left: 10px;vertical-align: 3px;">loading</span>'));
         }
 
         this.CheckMySite = function () {
@@ -67,7 +67,7 @@
         };
 
         this.getMyFollowedDocuments = function (wrapper) {
-            var uri = _spPageContextInfo.webAbsoluteUrl + "/_api/social.following/my/followed(types=2)";
+            var uri = _spPageContextInfo.webServerRelativeUrl + "/_api/social.following/my/followed(types=2)";
 
             $.ajax({
                 url: uri,
@@ -113,11 +113,11 @@
         if (confirm("You are about to remove that document from your list of followed documents. Click OK to proceed.")) {
 
 
-            getFormDigest(_spPageContextInfo.webAbsoluteUrl).then(function (data) {
+            getFormDigest(_spPageContextInfo.webServerRelativeUrl).then(function (data) {
 
                 //http://<siteCollection>/<site>/_api/social.following/stopfollowing(ActorType=1,ContentUri=@v,Id=null)?@v='http://server/Shared%20Documents/fileName.docx'
                 //var uri = "http://" + window.location.hostname + "/_api/social.following/stopfollowing(ActorType=1,ContentUri=@v,Id=null)?@v='" + docUri + "'";
-                var uri = _spPageContextInfo.webAbsoluteUrl + "/_api/social.following/stopfollowing";
+                var uri = _spPageContextInfo.webServerRelativeUrl + "/_api/social.following/stopfollowing";
 
                 var body = JSON.stringify({
                     "actor": {
